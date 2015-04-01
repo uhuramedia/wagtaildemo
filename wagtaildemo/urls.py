@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^search/', include(wagtailsearch_frontend_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
+    url(r'^portlet/', include('portlet.urls')),
 
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's serving mechanism

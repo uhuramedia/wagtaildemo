@@ -20,9 +20,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'wagtaildemo',
-        'USER': 'postgres',
+        'USER': '',
         'PASSWORD': '',
-        'HOST': '',  # Set to empty string for localhost.
+        'HOST': 'localhost',  # Set to empty string for localhost.
         'PORT': '',  # Set to empty string for default.
         'CONN_MAX_AGE': 600,  # number of seconds database connections should persist for
     }
@@ -168,6 +168,7 @@ INSTALLED_APPS = (
     'wagtail.wagtailsites',
 
     'demo',
+    'portlet',
 )
 
 EMAIL_SUBJECT_PREFIX = '[wagtaildemo] '

@@ -278,7 +278,7 @@ class BlogIndexPage(Page):
 
         return blogs
 
-    def get_context(self, request):
+    def get_context(self, request, *args, **kwargs):
         # Get blogs
         blogs = self.blogs
 
@@ -286,6 +286,11 @@ class BlogIndexPage(Page):
         tag = request.GET.get('tag')
         if tag:
             blogs = blogs.filter(tags__name=tag)
+
+        year = request.GET.get('year')
+
+        if year:
+            blogs = blogs.filter(date__year=year)
 
         # Pagination
         page = request.GET.get('page')

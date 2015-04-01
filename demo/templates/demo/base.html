@@ -21,6 +21,7 @@
             {# SCSS compilation relies on django compressor #}
             <link rel="stylesheet" type="text/x-scss" href="{% static "demo/css/main.scss" %}" />
         {% endcompress %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/portlet_admin.css' %}" />
 
         {% block extra_css %}{% endblock %} {# Override this block in individual templates in order to add stylesheets on a template by template basis #}
 
@@ -42,7 +43,6 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-
     </head>
 
     <body class="{% block body_class %}{% endblock %}"> {# Override this block to set custom body classes on a template by template basis #}
@@ -75,6 +75,9 @@
         {# External javascript #}
         <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="{% static 'js/portlets.js' %}"></script>
 
         {% compress js %}
             <script src="{% static "demo/js/vendor/fluidvids.js" %}"></script>
